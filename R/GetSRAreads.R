@@ -191,6 +191,6 @@ renameAll <- function(assigned_SRA = NULL, input_dir=NULL, format = NULL){
   name_check <- list.files(input_dir, pattern="fastq.gz$|fastq$", recursive=TRUE,full.names = TRUE)
   assigned_SRA$name_check <- name_check %in% assigned_SRA$new_name
   ##write output to outdir
-  write.csv(assigned_SRA, paste0(outdir, "assigned_SRAreads.csv"))
+  write.csv(assigned_SRA, paste0(outdir, "assigned_SRAreads_final.csv"))
   print("All done! Please check in assigned_SRAreads.csv for new column name_check and make sure you are happy!")
 }
