@@ -49,15 +49,17 @@ The functions *assignSRAreads()* and *renameAll()* will always output a csv file
 3) parallelisation is supported via the parallel package. This is currently turned off as default to avoid accidently hogging resources on clusters. It can be activated by: @param parallel = TRUE
 
 ```
-##Assign directories
+##Assign directories. Make sure that they all have the same parent base directory 'Project_X in this example'
 working_dir = "~/Project_X/"
 input_dir = "~/Project_X/fasterq_output/"
 outdir="~/Project_X/read_lengths/"
 
 ##Assign SRA reads. This will output a datatable containing columns: "SRR_ID", "assigned_read", "new_names", "cellranger_names"
-assigned_files <- assignSRAreads(working_dir = working_directory, input_dir = input_dir, outdir =outdir, parallel=TRUE)
+assigned_files <- assignSRAreads(working_dir = working_dir, input_dir = input_dir, outdir =outdir, parallel=TRUE)
 
 ##Correct names. Here format can be assigned as "read_correct" or "cellranger". read_correct simple corrects the _1/_2/_3 suffixes to the correct assignments. cellranger, will rename all files to cellranger compatible formats SRRXXXX_S1_L001_RX_001.fastq
+
+## Make sure to check the output datatable before running the following to rename your fastq files
 
 renameAll(assigned_SRA= assigned_files, input_dir=input_dir, format="cellranger")
 ```
