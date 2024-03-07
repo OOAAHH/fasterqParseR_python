@@ -64,7 +64,9 @@ assigned_files <- assignSRAreads(working_dir = working_dir, input_dir = input_di
 renameAll(assigned_SRA= assigned_files, input_dir=input_dir, format="cellranger")
 ```
 
+
 If you want an example on how to run it, check out Check out my [example](https://github.com/Nusob888/fasterqParseR/blob/7cef949f93c9795ff0e30cfd3671e63df5601133/example_code.R) for more information.
+
 
 
 I hope you all enjoy using this small package. 
